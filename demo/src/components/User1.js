@@ -12,10 +12,12 @@ export const User1 = (props) => {
             <p>Name: {b.name}</p>
             <p>Enroll No: {b.Enroll_No}</p>
             <p>Department: {b.Department}</p>
+            <p>Book Name: {props.BookName}</p>
+            <p>Author Name: {props.authorName}</p>
             <h3>
-            <nav>
-                <NavLink to='/home'>home</NavLink>
-            </nav>
+                <nav>
+                    <NavLink to='/home'>home</NavLink>
+                </nav>
             </h3>
         </div>
     );

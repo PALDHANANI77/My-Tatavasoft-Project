@@ -1,0 +1,12 @@
+.form{
+    justify-content: center;
+    text-align: center;
+    height: 70vh;
+    width: 50vw;
+    background-color: cadetblue;
+    margin-left: 25%;
+}
+input{
+    outline: none;
+    /* border: 0px; */
+}
