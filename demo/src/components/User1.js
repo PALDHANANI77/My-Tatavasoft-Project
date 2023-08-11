@@ -1,24 +1,162 @@
-import { NavLink } from "react-router-dom";
-export const User1 = (props) => {
-    const b = {
-        name: "Raj",
-        Enroll_No: 1234,
-        Department: "IT"
-    };
 
-    return (
-        <div>
-            <h1>hello</h1>
-            <p>Name: {b.name}</p>
-            <p>Enroll No: {b.Enroll_No}</p>
-            <p>Department: {b.Department}</p>
-            <p>Book Name: {props.BookName}</p>
-            <p>Author Name: {props.authorName}</p>
-            <h3>
-                <nav>
-                    <NavLink to='/home'>home</NavLink>
-                </nav>
-            </h3>
+import React from "react";
+import { Formik } from "formik";
+import * as Yup from "yup";
+import {
+  Breadcrumbs,
+  Button,
+  Link,
+  List,
+  ListItem,
+  TextField,
+  Typography,
+} from "@material-ui/core";
+import { useNavigate } from "react-router-dom";
+import ValidationErrorMessage from "./form/Abc"; 
+import { loginStyle } from "./form/Sty"; 
+import authService from "./form/Authservice";
+import { toast } from "react-toastify";
+
+const User1 = () => {
+  const navigate = useNavigate();
+
+  const initialValues = {
+    email: "",
+    password: "",
+  };
+
+  const validationSchema = Yup.object().shape({
+    email: Yup.string()
+      .email("Email is not valid")
+      .required("Email is required"),
+    password: Yup.string()
+      .min(5, "Password must be more than 5 characters")
+      .required("Password is required."),
+  });
+
+  const classes = loginStyle();
+
+  const onSubmit = (data) => {
+  
+    authService.login(data).then((res) => {
+      toast.success("Login successfully");
+      console.log("result", res);
+    });
+  };
+
+  return (
+    <div className={classes.loginWrapper}>
+    <div className="login-page-wrapper">
+      <div className="container">
+        <Breadcrumbs
+          separator="›"
+          aria-label="breadcrumb"
+          className="breadcrumb-wrapper"
+        >
+          <Link color="inherit" href="/" title="Home">
+            Home
+          </Link>
+          <Typography color="textPrimary">Login</Typography>
+        </Breadcrumbs>
+        <Typography variant="h1">Login or Create an Account</Typography>
+        <div className="login-row">
+          <div className="content-col">
+            <div className="top-content">
+              <Typography variant="h2">New Customer</Typography>
+              <p>Registration is free and easy.</p>
+              <List className="bullet-list">
+                <ListItem>Faster checkout</ListItem>
+                <ListItem>Save multiple shipping addresses</ListItem>
+                <ListItem>View and track orders and more</ListItem>
+              </List>
+            </div>
+            <div className="btn-wrapper">
+              <Button
+                className="pink-btn btn"
+                variant="contained"
+                color="primary"
+                disableElevation
+                onClick={() => {
+                  navigate("/user2");
+                }}
+              >
+                Create an Account
+              </Button>
+            </div>
+          </div>
+          <div className="form-block">
+            <Typography variant="h2">Registered Customers</Typography>
+            <p>If you have an account with us, please log in.</p>
+            <Formik
+              initialValues={initialValues}
+              validationSchema={validationSchema}
+              onSubmit={onSubmit}
+            >
+              {({
+                values,
+                errors,
+                touched,
+                handleBlur,
+                handleChange,
+                handleSubmit,
+              }) => (
+                <form onSubmit={handleSubmit}>
+                  <div className="form-row-wrapper">
+                    <div className="form-col">
+                      <TextField
+                        id="email"
+                        name="email"
+                        onBlur={handleBlur}
+                        onChange={handleChange}
+                        label="Email Address *"
+                        autoComplete="off"
+                        variant="outlined"
+                        inputProps={{ className: "small" }}
+                      />
+                      <ValidationErrorMessage
+                        message={errors.email}
+                        touched={touched.email}
+                      />
+                    </div>
+                    <div className="form-col">
+                      <TextField
+                        id="password"
+                        name="password"
+                        label="Password *"
+                        type="password"
+                        variant="outlined"
+                        onBlur={handleBlur}
+                        onChange={handleChange}
+                        inputProps={{ className: "small" }}
+                        autoComplete="off"
+                      />
+                      <ValidationErrorMessage
+                        message={errors.password}
+                        touched={touched.password}
+                      />
+                    </div>
+                    <div className="btn-wrapper">
+                      <Button
+                        type="submit"
+                        className="pink-btn btn"
+                        variant="contained"
+                        color="primary"
+                        disableElevation
+                        onClick={handleSubmit}
+                      >
+                        Login
+                      </Button>
+                    </div>
+                  </div>
+                </form>
+              )}
+            </Formik>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  </div>
+);
 };
+
+export default User1; // Export the component

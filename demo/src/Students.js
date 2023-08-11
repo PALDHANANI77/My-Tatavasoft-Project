@@ -1,6 +1,6 @@
 import { NavLink, Routes,Route } from 'react-router-dom';
-import {User1} from "./components/User1"
-import {User2} from "./components/User2"
+import User1 from "./components/User1"
+import User2 from "./components/User2"
 import {User3} from "./components/User3"
 function Students() {
   const student = ["std1", "std2", "std3"];

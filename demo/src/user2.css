@@ -1,0 +1,230 @@
+/* user2FormStyles.css */
+
+.create-account-wrapper {
+    /* Define styles for the main wrapper */
+    background-color: #f7f7f7;
+    padding: 42px 0 80px;
+  
+    @media (max-width: 991px) {
+      padding: 35px 0 50px;
+    }
+  
+    @media (max-width: 767px) {
+      padding: 35px 0 40px;
+    }
+  }
+  
+  .create-account-page-wrapper {
+    /* Define styles for the inner page wrapper */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .create-account-row {
+    /* Define styles for the registration form section */
+    margin-top: 20px;
+  }
+  
+  /* Define additional styles for various form elements */
+  .form-block {
+    margin-top: 20px;
+  }
+  
+  .personal-information {
+    margin-bottom: 32px;
+  }
+  
+  .login-information {
+    margin-top: 30px;
+  }
+  
+  .btn-wrapper {
+    margin-bottom: 15px;
+    margin-top: 17px;
+  
+    .btn {
+      min-width: 136px;
+      padding: 0 15px;
+    }
+  }
+  
+  .form-row-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  
+    .form-col {
+      padding: 0 15px;
+      max-width: 50%;
+      flex: 0 0 50%;
+      position: relative;
+  
+      @media (max-width: 767px) {
+        max-width: 100%;
+        flex: 0 0 100%;
+      }
+  
+      &.full-width {
+        max-width: 100%;
+        flex: 0 0 100%;
+      }
+  
+      p {
+        color: #777777;
+        font-weight: 300;
+        font-size: 15px;
+        margin-bottom: 16px;
+  
+        &.text-danger {
+          font-size: 14px;
+          color: #f14d54;
+          position: relative;
+          bottom: 12%;
+          margin: 0;
+        }
+      }
+    }
+  
+    .MuiInputBase-formControl {
+      margin-bottom: 15px;
+    }
+  }
+
+
+  /* user2FormStyles.css */
+
+.create-account-wrapper {
+    background-color: #f2f2f2; /* Light gray background */
+    padding: 60px 0 100px;
+  
+    @media (max-width: 991px) {
+      padding: 40px 0 60px;
+    }
+  
+    @media (max-width: 767px) {
+      padding: 40px 0 50px;
+    }
+  }
+  
+  .create-account-page-wrapper {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .create-account-row {
+    margin-top: 30px;
+  }
+  
+  .form-block {
+    margin-top: 30px;
+  }
+  
+  .personal-information {
+    margin-bottom: 40px;
+  }
+  
+  .login-information {
+    margin-top: 40px;
+  }
+  
+  .btn-wrapper {
+    margin-bottom: 20px;
+    margin-top: 25px;
+  
+    .btn {
+      min-width: 160px;
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #ff3f6c; /* Myntra pink */
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      transition: background-color 0.2s ease;
+  
+      &:hover {
+        background-color: #ff0058; /* Darker pink on hover */
+      }
+    }
+  }
+  
+  .form-row-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  
+    .form-col {
+      padding: 0 15px;
+      max-width: 50%;
+      flex: 0 0 50%;
+      position: relative;
+  
+      @media (max-width: 767px) {
+        max-width: 100%;
+        flex: 0 0 100%;
+      }
+  
+      &.full-width {
+        max-width: 100%;
+        flex: 0 0 100%;
+      }
+  
+      p {
+        color: #999999; /* Light gray text */
+        font-weight: 400;
+        font-size: 14px;
+        margin-bottom: 14px;
+  
+        &.text-danger {
+          font-size: 12px;
+          color: #ff3f6c; /* Myntra pink for error */
+          position: relative;
+          bottom: 10px;
+          margin: 0;
+        }
+      }
+    }
+  
+    .MuiInputBase-formControl {
+      margin-bottom: 18px;
+    }
+  }
+  .create-account-page-wrapper {
+    /* ... (other styles) */
+    background-color: #4390d4b5; /* Light blue color */
+    /* ... (other styles) */
+  }  
+
+
+
+  .create-account-wrapper {
+    /* ... (other styles) */
+  }
+  
+  .create-account-page-wrapper {
+    /* ... (other styles) */
+  }
+  
+  .create-account-row {
+    /* ... (other styles) */
+  }
+  
+  .form-block {
+    margin-top: 20px;
+    display: flex; /* Display children elements in a row */
+    justify-content: space-between; /* Add space between the sections */
+  }
+  
+  .personal-information,
+  .login-information {
+    width: calc(50% - 10px); /* Divide the space equally with a little space between */
+    margin-bottom: 100px; /* Remove any margins to fit them together */
+  }
+  
+  /* ... (other styles) */
+
+ 
+  
